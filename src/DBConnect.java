@@ -6,7 +6,7 @@ public class DBConnect{
 	{			
 		String url = "jdbc:derby://localhost:1527/CdCollectionWeb";		
 		String username = "root";			
-		String password = "";					
+		String password = null;					
 		System.out.println("Connecting database...");			
 						
 		Connection conn = null;
