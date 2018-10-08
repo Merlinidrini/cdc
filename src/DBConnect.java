@@ -1,11 +1,10 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import org.apache.derby.jdbc.ClientDriver;
 
 public class DBConnect{   		
 	public static Connection connect()
 	{			
-		String url = "jdbc:mysql://localhost:3306/cdcollection";		
+		String url = "jdbc:derby://localhost:1527/CdCollectionWeb";		
 		String username = "root";			
 		String password = "";					
 		System.out.println("Connecting database...");			

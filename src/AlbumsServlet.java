@@ -1,6 +1,8 @@
 
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class CdCollectionServlet
+ * Servlet implementation class AlbumsServlet
  */
-@WebServlet("/CdCollectionServlet")
-public class CdCollectionServlet extends HttpServlet {
+@WebServlet("/AlbumsServlet")
+public class AlbumsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CdCollectionServlet() {
+    public AlbumsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +29,11 @@ public class CdCollectionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		List<Album> albums = GetData.getAlbums();
+		response.getWriter().append("dit is hem" + albums.get(0).name);
+        //request.setAttribute("albums", albums);
+        //request.getRequestDispatcher("/albumsResponse.jsp").forward(request, response);
 	}
 
 	/**

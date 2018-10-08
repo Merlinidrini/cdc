@@ -11,17 +11,19 @@ public class GetData
 		List<Album> albums = new ArrayList<Album>();
 		try {
 				Connection conn = DBConnect.connect();
-				String query = "SELECT * FROM albums";
+				String query = "SELECT * FROM CD_CLIENT.ALBUMS";
 				PreparedStatement stmt=conn.prepareStatement(query);  
 				ResultSet rs=stmt.executeQuery();  
 				
 				while(rs.next()){  
 					Album album = new Album();
+					album.id = rs.getInt("id");
 					album.name = rs.getString("name");
 					album.artist= rs.getString("artist");
 					album.genre= rs.getInt("genre");
-					album.year= rs.getInt("year");
+					album.year= rs.getInt("rel_year");
 					albums.add(album);
+					System.out.println(album.name + "is the name of the album");
 				} 
 	    		conn.close();
 		}catch (SQLException e) 
@@ -35,7 +37,7 @@ public class GetData
 
 		try {	
 			Connection conn = DBConnect.connect();
-			String query = "INSERT INTO albums (name, artist, genre, year) VALUES (?,?,?,?)";
+			String query = "INSERT INTO CD_CLIENT.ALBUMS (name, artist, genre, rel_year) VALUES (?,?,?,?)";
 			PreparedStatement stmt=conn.prepareStatement(query); 
 			stmt.setString(1, album.name);
 			stmt.setString(2, album.artist);
