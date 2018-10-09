@@ -11,7 +11,7 @@
   </welcome-file-list>
   <servlet>
    	<servlet-name>AlbumsServlet</servlet-name>
-   	<jsp-file>/albumsResponse.jsp</jsp-file>
+   	<servlet-class>AlbumsServlet</servlet-class>
 	</servlet>
 <servlet-mapping>
   <servlet-name>AlbumsServlet</servlet-name>

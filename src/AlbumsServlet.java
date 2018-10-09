@@ -31,8 +31,11 @@ public class AlbumsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		List<Album> albums = GetData.getAlbums();
-		response.getWriter().append("dit is hem " + albums.get(0).name);
+		
         request.setAttribute("albums", albums);
+        response.getWriter().append("dit is hem " + albums.get(1).toString());
+        response.getWriter().append("dit is naam " + albums.get(1).name);
+        response.getWriter().append("dit is artist " + albums.get(1).artist);
         request.getRequestDispatcher("/albumsResponse.jsp").forward(request, response);
 	}
 

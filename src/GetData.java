@@ -17,13 +17,13 @@ public class GetData
 				
 				while(rs.next()){  
 					Album album = new Album();
-					album.id = rs.getInt("id");
-					album.name = rs.getString("name");
-					album.artist= rs.getString("artist");
-					album.genre= rs.getInt("genre");
-					album.year= rs.getInt("rel_year");
+					album.id = rs.getInt("ID");
+					album.name = rs.getString("NAME");
+					album.artist= rs.getString("ARTIST");
+					album.genre= rs.getInt("GENRE");
+					album.year= rs.getInt("REL_YEAR");
 					albums.add(album);
-					System.out.println(album.name + "is the name of the album");
+					System.out.println(album.name + " is the name of the album");
 				} 
 	    		conn.close();
 		}catch (SQLException e) 

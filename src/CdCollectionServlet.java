@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.util.List;
 
@@ -31,7 +29,7 @@ public class CdCollectionServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		List<Album> albums = GetData.getAlbums();
-		response.getWriter().append("dit is hem" + albums.get(0).name);
+		response.getWriter().append("dit is hem " + albums.get(0).toString());
 	}
 
 	/**
