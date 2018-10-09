@@ -3,13 +3,8 @@
     <%@ page import="java.util.*" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Albums</title>
-</head>
-<body>
+<%@include file="Header.jsp"%>
+
 	<table>
             <tr>
                 <th>ID</th>
@@ -28,5 +23,10 @@
                 </tr>
             </c:forEach>
        </table>
-</body>
-</html>
+
+<%@include file="Footer.jsp"%>
+
+
+
+
+

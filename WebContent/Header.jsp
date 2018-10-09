@@ -68,21 +68,21 @@ div.content {
 <body>
 
 <ul class="sidenav">
-	<li><a class="active" href="home">Home</a></li>
-	<li><a href="albums">Albums</a>
+	<li><a class="active" href="Home">Home</a></li>
+	<li><a href="Albums">Albums</a>
 		<ul>
-		<li><a href="insert-album">New album</a></li>
+		<li><a href="New-Album">New album</a></li>
 		<li><a href="edit-album">Edit album</a></li>
 		</ul>	
 	</li>
-	<li><a href="genres">Genres</a>
+	<li><a href="Genres">Genres</a>
 		<ul>
-			<li><a href="insert-genre">New genre</a></li>
-			<li><a href="edit-genre">Edit genre</a></li>
+			<li><a href="New-Genre">New genre</a></li>
+			<li><a href="Edit-Genre">Edit genre</a></li>
 		</ul>	
 	</li>
-	<li><a href="about">Contact</a></li>
-	<li><a href="about">About</a></li>
+	<li><a href="AboutUs">About Us</a></li>
+	<li><a href="Contact">Contact</a></li>
 </ul>
 
 <div class="content">
