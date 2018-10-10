@@ -11,6 +11,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -77,23 +78,31 @@ class Parser
     
     public JSONArray getJSON(List<Album> albums)
     {
-    	JSONArray jsar = new JSONArray();
-    	
-    	for(Album album : albums)
+    	try
     	{
-    		JSONObject json = new JSONObject();
-    		json.put("name", album.name);
-    		json.put("artist", album.artist);
-    		json.put("genre", album.genre);
-    		json.put("year", album.year);
-    		jsar.put(json);
+	    	JSONArray jsar = new JSONArray();
+	    	
+	    	for(Album album : albums)
+	    	{
+	    		JSONObject json = new JSONObject();
+	    		json.put("name", album.name);
+	    		json.put("artist", album.artist);
+	    		json.put("genre", album.genre);
+	    		json.put("year", album.year);
+	    		jsar.put(json);
+	    	}
+	    	
+	    	StringWriter out = new StringWriter();
+	    	jsar.write(out);
+	    	//String jsonText = out.toString();
+	    	
+	    	return jsar;
     	}
-    	
-    	StringWriter out = new StringWriter();
-    	jsar.write(out);
-    	//String jsonText = out.toString();
-    	
-    	return jsar;
+    	catch(JSONException e)
+    	{
+    		System.out.println(e);
+    		return null;
+    	}
     }	
     
     public List<Album> getData(Document doc)

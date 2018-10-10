@@ -31,12 +31,12 @@ public class AlbumsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		List<Album> albums = GetData.getAlbums();
-		
-        request.setAttribute("albums", albums);
-        response.getWriter().append("dit is hem " + albums.get(1).toString());
-        response.getWriter().append("dit is naam " + albums.get(1).name);
-        response.getWriter().append("dit is artist " + albums.get(1).artist);
-        request.getRequestDispatcher("/albumsResponse.jsp").forward(request, response);
+		String[] uri = request.getRequestURI().split("/");
+        String page = uri[2];
+        
+        request.setAttribute("page", page);
+        request.setAttribute("albums", albums);        
+        request.getRequestDispatcher("/AlbumsResponse.jsp").forward(request, response);
 	}
 
 	/**
