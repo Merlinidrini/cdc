@@ -13,6 +13,14 @@
     <servlet-class>AlbumsServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>AlbumViewServlet</servlet-name>
+    <servlet-class>AlbumViewServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ScanAlbumsServlet</servlet-name>
+    <servlet-class>ScanAlbumsServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>AboutUsServlet</servlet-name>
     <servlet-class>AboutUsServlet</servlet-class>
   </servlet>
@@ -20,13 +28,21 @@
     <servlet-name>ContactServlet</servlet-name>
     <servlet-class>ContactServlet</servlet-class>
   </servlet>
-   <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>HomeServlet</servlet-name>
     <url-pattern>/Home</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AlbumsServlet</servlet-name>
     <url-pattern>/Albums</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AlbumViewServlet</servlet-name>
+    <url-pattern>/AlbumView</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ScanAlbumsServlet</servlet-name>
+    <url-pattern>/ScanAlbums</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AboutUsServlet</servlet-name>
@@ -37,11 +53,11 @@
     <url-pattern>/Contact</url-pattern>
   </servlet-mapping>
   <error-page>
- <error-code>404</error-code>
- <location>/404.jsp</location>
- </error-page>
- <error-page>
-  <exception-type>SQLException</exception-type>
-  <location>/500.jsp</location>
-</error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <exception-type>SQLException</exception-type>
+    <location>/500.jsp</location>
+  </error-page>
 </web-app>

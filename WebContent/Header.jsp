@@ -10,6 +10,12 @@ body {margin: 0;
 		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	}
 	
+table, tr, td{
+	border-collapse: collapse;
+	border: 1px solid blue;
+	white-space: nowrap;
+}
+	
 div.topbar {
 	background-color: #555555;
 	color: white;
@@ -21,7 +27,6 @@ div.topbar {
 	top: 0;
 	height: 25%;
 	width: 100%;
-	
 }
 
 ul.sidenav {
